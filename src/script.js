@@ -1,5 +1,6 @@
 var request = new XMLHttpRequest();
-var data_url = 'data/data.json'
+var data_url = 'data/data.json';
+
 request.open('GET', data_url);
 
 
