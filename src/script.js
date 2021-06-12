@@ -6,11 +6,11 @@ request.open('GET', data_url);
 
 function build_html(city, confirmed, confirmed_diff, date){
     var text;
-    text = '<p>Execução instaurada hoje:</p>'+String(date);
-    text += '</br>'
-    text += '</br>'
-    text += '</br>'
-    text += '</br>'
+    text = 'Execução instaurada hoje:'+String(date);
+    text += '<br>'
+    text += '<br>'
+    text += '<br>'
+    text += '<br>'
     text += "Cidade: " + String(city);
     text += '<br>'
     text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
