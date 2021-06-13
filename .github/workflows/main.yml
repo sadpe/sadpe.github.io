@@ -15,7 +15,7 @@
      - name: Downloading new data/data.json file
        run: |
           chmod +x ./updater/main.py
-          ./updater/main.py
+          ./updater/main.py ${{ secrets.API_TOKEN }}
      - name: Updating data/data.json
        uses: test-room-7/action-update-file@v1.5.0
        with:
