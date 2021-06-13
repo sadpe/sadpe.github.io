@@ -24,7 +24,7 @@ request.onload = function(){
         let z = 'VAZIO'
         let data = JSON.parse(this.response);
         let message = (typeof data['message'] === 'undefined' || data['message'] == undefined)? z: data['message'];
-        //let city = (typeof data['results'][0]['city'] === 'undefined' || data['results'][0]['city'] == undefined)? z: data['results'][0]['city'];
+        let city = (typeof data['results'][0]['city'] === 'undefined' || data['results'][0]['city'] == undefined)? z: data['results'][0]['city'];
         //let confirmed_today = (typeof data['results'][0]['confirmed'] === 'undefined')? 0 : data['results'][0]['confirmed'];
         //let confirmed_yesterday = (typeof data['results'][1]['confirmed'] === 'undefined')? 0 : data['results'][1]['confirmed'];
         //let confirmed_diff = parseInt(confirmed_today) - parseInt(confirmed_yesterday);
@@ -32,7 +32,7 @@ request.onload = function(){
         // let html_text = build_html(message, city, confirmed_today, confirmed_diff, update_date);
         
         // document.body.innerHTML = html_text;
-        document.body.innerHTML = message;
+        document.body.innerHTML = String(city) + '-----';
    // }
 }
 
