@@ -5,9 +5,9 @@ request.open('GET', data_url);
 
 function build_html(hj, message, city, confirmed, confirmed_diff, date){
     var text;
-    text =  '<b>Execução instaurada hoje: </b>'+hj;
+    text =  '<b>Execução instaurada hoje: </b>'+hj+'.';
     text += '<br>'
-    text += (message != 'VAZIO')?'<b>Resultado de erro: </b>' + message :'';
+    text += (message != 'VAZIO')?('<b>Resultado de erro: </b>' + message +'.') :'';
     text += '<br>'
     text += '<br>'
     if (date != 'VAZIO'){
@@ -15,7 +15,7 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
         text += '<br>'
         text += '<b>Cidade:</b> '+ String(city);
         text += '<br>'
-        text += `<b>Casos confirmados: </b>${confirmed} (+${confirmed_diff})`;
+        text += `<b>Casos confirmados: </b>${confirmed} (+${confirmed_diff} foram de ontem pra hoje.)`;
         text += '<br>'
         text += '<b>Data de atualização: </b>' + String(date);
     }
