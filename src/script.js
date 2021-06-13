@@ -5,9 +5,9 @@ request.open('GET', data_url);
 
 function build_html(hj, message, city, confirmed, confirmed_diff, date){
     var text;
-    text = '<b>Execução instaurada hoje: </b>'+hj;
+    text =  '<b>Execução instaurada hoje: </b>'+hj;
     text += '<br>'
-    text += ('VAZIO' in message)? '':'<b>Resultado de erro:</b>' + message;
+    text += '<b>Resultado de erro:</b>' + message;
     text += '<br>'
     text += '<br>'
     //if ('VAZIO' not in date){
