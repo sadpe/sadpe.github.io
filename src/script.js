@@ -22,8 +22,7 @@ request.onload = function(){
     // if (this.status == 200){
         let z = 'VAZIO'
         let data = JSON.parse(this.response);
-        //let message = (typeof data['message'] === 'undefined' || data['message'] == undefined)? z: data['message'];
-        //let city = (data['results'][0]['city'])? True: False;
+        let message = ('message' in data)? data['message']:z;
         let city = ('results' in data && 'city' in data['results'][0])? data['results'][0]['city']: z;
         let confirmed_today = ('results' in data && 'confirmed' in data['results'][0])? data['results'][0]['confirmed']:z;
         let confirmed_yesterday = ('results' in data && 'confirmed' in data['results'][1])? data['results'][1]['confirmed']:z;
