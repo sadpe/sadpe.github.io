@@ -23,8 +23,10 @@ request.onload = function(){
     // if (this.status == 200){
         let z = 'VAZIO'
         let data = JSON.parse(this.response);
-        let message = (typeof data['message'] === 'undefined' || data['message'] == undefined)? z: data['message'];
-        let city = (!data['results'][0]['city'])? z: data['results'][0]['city'];
+        const json_getAllKeys = data => data.reduce((keys, obj) => keys.concat(Object.keys(obj).filter(key => keys.indexOf(key) === -1)), [])
+    
+        //let message = (typeof data['message'] === 'undefined' || data['message'] == undefined)? z: data['message'];
+        //let city = (!data['results'][0]['city'])? z: data['results'][0]['city'];
         //let confirmed_today = (typeof data['results'][0]['confirmed'] === 'undefined')? 0 : data['results'][0]['confirmed'];
         //let confirmed_yesterday = (typeof data['results'][1]['confirmed'] === 'undefined')? 0 : data['results'][1]['confirmed'];
         //let confirmed_diff = parseInt(confirmed_today) - parseInt(confirmed_yesterday);
@@ -32,7 +34,7 @@ request.onload = function(){
         // let html_text = build_html(message, city, confirmed_today, confirmed_diff, update_date);
         
         // document.body.innerHTML = html_text;
-        document.body.innerHTML = String(city) + '-----';
+        document.body.innerHTML = String(json_getAllKeys) + '-----';
    // }
 }
 
