@@ -19,12 +19,12 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
         text += '<br>'
         text += '<b>Data de atualização: </b>' + String(date);
     }
-    else{ text += '<b>[Problema]Não foram coletados dados hoje!</b>'; }
+    // else{ text += '<b>[Problema]Não foram coletados dados hoje!</b>'; }
     return text;
 }
 
 request.onload = function(){
-    if (this.status == 200){
+    // if (this.status == 200){
         let z = 'VAZIO'
         let data = JSON.parse(this.response);
         let dayName = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
@@ -42,8 +42,8 @@ request.onload = function(){
         
         document.body.innerHTML = html_text;
         //document.body.innerHTML = city;
-   }
-   else{ document.body.innerHTML = 'Sem dado!'; }
+   // }
+   // else{ document.body.innerHTML = 'Sem dado!'; }
 }
 
 request.onerror = function(){
