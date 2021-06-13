@@ -33,7 +33,7 @@ request.onload = function(){
         let html_text = build_html(message, city, confirmed_today, confirmed_diff, update_date);
         
         // document.body.innerHTML = html_text;
-        document.body.innerHTML = message;
+        document.body.innerHTML = data["message"];
    }
 }
 
