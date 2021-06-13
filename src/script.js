@@ -43,6 +43,8 @@ request.onload = function(){
         document.body.innerHTML = html_text;
         //document.body.innerHTML = city;
    }
+   else:
+        document.body.innerHTML = 'Sem dado!';
 }
 
 request.onerror = function(){
