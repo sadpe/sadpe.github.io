@@ -10,7 +10,7 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
     text += '<b>Resultado de erro:</b>' + message;
     text += '<br>'
     text += '<br>'
-    //if ('VAZIO' not in date){
+    if (date != 'VAZIO'){
         text += '<b>[Atenção] Dados coletados abaixo.</b>'
         text += '<br>'
         text += '<b>Cidade:</b> '+ String(city);
@@ -18,8 +18,8 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
         text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
         text += '<br>'
         text += '<b>Data de atualização: </b>' + String(date);
-    //}
-    // else{ text += '<b>[Problema]Não foram coletados dados hoje!</b>'; }
+    }
+    else{ text += '<b>[Problema]Não foram coletados dados hoje!</b>'; }
     return text;
 }
 
