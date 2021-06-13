@@ -8,7 +8,6 @@ function build_html(message, city, confirmed, confirmed_diff, date){
     var text;
     text = 'Execução instaurada hoje:'+String(date);
     text += String(message);
-    // (typeof value === 'undefined') ? null : value;
     text += '<br>'
     text += '<br>'
     text += '<br>'
@@ -33,7 +32,7 @@ request.onload = function(){
         // let html_text = build_html(message, city, confirmed_today, confirmed_diff, update_date);
         
         // document.body.innerHTML = html_text;
-        document.body.innerHTML = 'message';
+        document.body.innerHTML = data['message'];
    // }
 }
 
