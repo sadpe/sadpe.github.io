@@ -26,7 +26,8 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
 request.onload = function(){
     // if (this.status == 200){
         let z = 'VAZIO'
-        let data = JSON.parse(this.response);
+        let x = String(this.response).trim();
+        let data = JSON.parse(x);
         let dayName = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
         let monName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", "outubro", "novembro", "dezembro")
         let now = new Date
