@@ -6,16 +6,16 @@ request.open('GET', data_url);
 
 function build_html(message, city, confirmed, confirmed_diff, date){
     var text;
-    text = 'Execução instaurada hoje:'+String(date);
-    text += String(message);
-    text += '<br>'
-    text += '<br>'
-    text += '<br>'
-    text += "Cidade: " + String(city);
-    text += '<br>'
-    text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
-    text += '<br>'
-    text += "Data de atualização: " + String(date);
+    // text = 'Execução instaurada hoje:'+String(date);
+    // text += String(message);
+    // text += '<br>'
+    // text += '<br>'
+    // text += '<br>'
+    // text += "Cidade: " + String(city);
+    // text += '<br>'
+    // text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
+    // text += '<br>'
+    // text += "Data de atualização: " + String(date);
     return text;
 }
 
