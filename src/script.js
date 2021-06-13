@@ -5,7 +5,7 @@ request.open('GET', data_url);
 
 function build_html(hj, message, city, confirmed, confirmed_diff, date){
     var text;
-    text = '<b>Execução instaurada hoje:</b>'+hj;
+    text = '<b>Execução instaurada hoje: </b>'+hj;
     text += '<br>'
     text += ('VAZIO' in message)? '':'<b>Resultado de erro:</b>' + message;
     text += '<br>'
@@ -13,10 +13,10 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
     if ('VAZIO' not in date):
         text += '<b>[Atenção] Dados coletados abaixo.</b>'
         text += '<br>'
-        text += "<b>Cidade:</b> " + String(city);
-        text += '<br>'
+        text += '<b>Cidade:</b> '+ String(city);
+        text += '<br><b>'
         text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
-        text += '<br>'
+        text += '</b><br>'
         text += '<b>Data de atualização: </b>' + String(date);
     else:
         text += '<b>[Problema]Não foram coletados dados hoje!</b>';
@@ -24,7 +24,7 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
 }
 
 request.onload = function(){
-    // if (this.status == 200){
+    if (this.status == 200){
         let z = 'VAZIO'
         let data = JSON.parse(this.response);
         let dayName = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
@@ -42,7 +42,7 @@ request.onload = function(){
         
         document.body.innerHTML = html_text;
         //document.body.innerHTML = city;
-   // }
+   }
 }
 
 request.onerror = function(){
