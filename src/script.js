@@ -19,9 +19,7 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
         text += '<br>'
         text += '<b>Data de atualização: </b>' + String(date);
     }
-    else{
-        text += '<b>[Problema]Não foram coletados dados hoje!</b>';
-    }
+    else{ text += '<b>[Problema]Não foram coletados dados hoje!</b>'; }
     return text;
 }
 
