@@ -4,10 +4,10 @@ var data_url = 'data/data.json';
 request.open('GET', data_url);
 
 
-function build_html(city, confirmed, confirmed_diff, date){
+function build_html(message, city, confirmed, confirmed_diff, date){
     var text;
     text = 'Execução instaurada hoje:'+String(date);
-    text += '<br>'
+    text += String(message);
     text += '<br>'
     text += '<br>'
     text += '<br>'
@@ -20,16 +20,17 @@ function build_html(city, confirmed, confirmed_diff, date){
 }
 
 request.onload = function(){
-    if (this.status == 200){
+    // if (this.status == 200){
         let data = JSON.parse(this.response);
+        let message = data['message'];
         let city = data['results'][0]['city'];
         let confirmed_today = data['results'][0]['confirmed']
         let confirmed_yesterday = data['results'][1]['confirmed']
         let confirmed_diff = parseInt(confirmed_today) - parseInt(confirmed_yesterday)
         let update_date = data['results'][0]['date']
-        let html_text = build_html(city, confirmed_today, confirmed_diff, update_date)
+        let html_text = build_html(message, city, confirmed_today, confirmed_diff, update_date)
         document.body.innerHTML = html_text;
-    }
+   // }
 }
 
 request.onerror = function(){
