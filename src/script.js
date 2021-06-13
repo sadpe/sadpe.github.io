@@ -5,18 +5,18 @@ request.open('GET', data_url);
 
 function build_html(hj, message, city, confirmed, confirmed_diff, date){
     var text;
-    text = 'Execução instaurada hoje:'+hj;
+    text = '<b>Execução instaurada hoje:</b>'+hj;
     text += '<br>'
-    text += 'Resultado:' + message;
+    text += '<b>Resultado:</b>' + message;
     text += '<br>'
     text += '<br>'
-    text += '[Atenção] Dados coletados abaixo.'
+    text += '<b>[Atenção] Dados coletados abaixo.</b>'
     text += '<br>'
-    text += "Cidade: " + String(city);
+    text += "<b>Cidade:</b> " + String(city);
     text += '<br>'
     text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
     text += '<br>'
-    text += "Data de atualização: " + String(date);
+    text += "<b>Data de atualização: </b>" + String(date);
     return text;
 }
 
