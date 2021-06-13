@@ -17,7 +17,7 @@
           chmod +x ./updater/main.py
           ./updater/main.py
      - name: Updating data/data.json
-       uses: alexesprit/action-update-file@master
+       uses: test-room-7/action-update-file@v1.5.0
        with:
          file-path: data/data.json
          commit-msg: Atualizando data/data.json
