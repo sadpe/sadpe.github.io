@@ -7,16 +7,19 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
     var text;
     text = '<b>Execução instaurada hoje:</b>'+hj;
     text += '<br>'
-    text += '<b>Resultado:</b>' + message;
+    text += ('VAZIO' in message)? '':'<b>Resultado de erro:</b>' + message;
     text += '<br>'
     text += '<br>'
-    text += '<b>[Atenção] Dados coletados abaixo.</b>'
-    text += '<br>'
-    text += "<b>Cidade:</b> " + String(city);
-    text += '<br>'
-    text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
-    text += '<br>'
-    text += "<b>Data de atualização: </b>" + String(date);
+    if ('VAZIO' not in date):
+        text += '<b>[Atenção] Dados coletados abaixo.</b>'
+        text += '<br>'
+        text += "<b>Cidade:</b> " + String(city);
+        text += '<br>'
+        text += `Casos confirmados: ${confirmed} (+${confirmed_diff})`;
+        text += '<br>'
+        text += '<b>Data de atualização: </b>' + String(date);
+    else:
+        text += '<b>[Problema]Não foram coletados dados hoje!</b>';
     return text;
 }
 
