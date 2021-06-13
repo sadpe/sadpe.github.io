@@ -7,7 +7,7 @@ function build_html(hj, message, city, confirmed, confirmed_diff, date){
     var text;
     text =  '<b>Execução instaurada hoje: </b>'+hj;
     text += '<br>'
-    text += (message != 'VAZIO')?'<b>Resultado de erro:</b>' + message :'';
+    text += (message != 'VAZIO')?'<b>Resultado de erro: </b>' + message :'';
     text += '<br>'
     text += '<br>'
     if (date != 'VAZIO'){
