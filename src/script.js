@@ -23,7 +23,7 @@ request.onload = function(){
         let z = 'VAZIO'
         let data = JSON.parse(this.response);
         //let message = (typeof data['message'] === 'undefined' || data['message'] == undefined)? z: data['message'];
-        let city = (data['results'][0]['city'])? z: data['results'][0]['city'];
+        let city = (data['results'][0]['city'])? True: False;
         //let confirmed_today = (typeof data['results'][0]['confirmed'] === 'undefined')? 0 : data['results'][0]['confirmed'];
         //let confirmed_yesterday = (typeof data['results'][1]['confirmed'] === 'undefined')? 0 : data['results'][1]['confirmed'];
         //let confirmed_diff = parseInt(confirmed_today) - parseInt(confirmed_yesterday);
