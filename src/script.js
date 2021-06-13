@@ -6,9 +6,11 @@ request.open('GET', data_url);
 function build_html(hj, message, city, confirmed, confirmed_diff, date){
     var text;
     text = 'Execução instaurada hoje:'+hj;
-    text += String(message);
+    text += '<br>'
+    text += 'Resultado:' + message;
     text += '<br>'
     text += '<br>'
+    text += '[Atenção] Dados coletados abaixo.'
     text += '<br>'
     text += "Cidade: " + String(city);
     text += '<br>'
